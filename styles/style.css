@@ -1,0 +1,507 @@
+*{
+    font-family: 'Work Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    
+}
+.preloader{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color:black;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.preloader img{
+    width: 20%;
+}
+
+.preloaderfinish{
+    animation: 1s load linear;
+    animation-iteration-count: 1;
+    transition: 0.4s ease-in-out;
+    transform: translateY(-100%);
+}
+@keyframes load{
+    0%{
+        transform: translateY(-20%) skewY(0deg);
+    }
+    20%{
+        transform: translateY(-40%) skewY(2deg);
+    }   
+     40%{
+        transform: translateY(-60%) skewY(4deg);
+    }  
+    60%{
+        transform: translateY(-80%) skewY(2deg);
+    }
+    80%{
+        transform: translateY(-100%) skewY(0deg);
+    }
+    100%{
+        display: none;
+    }
+}
+.navbar-brand{
+    color: black;
+}
+.cursor{
+    height:30px;
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+}
+
+.follow{
+    height:5px;
+    width: 5px;
+    background-color: black;
+    opacity: 0.04;
+    position: absolute;
+    z-index: 250;
+    border-radius: 100% !important;
+    pointer-events: none;
+    transition: 0.4s;
+    transform: translate(-70%,-70%);
+}
+
+.navbar-toggler{
+    outline: none !important;
+    border: none;
+}
+
+
+
+
+.menu-toggle{
+    position: relative;
+    border: none;
+    background: none;
+    cursor: none !important;
+    z-index: 300;
+    color: rgba(238, 238, 238, 0.466);
+}
+
+.menu-toggle:focus{
+    outline: none;
+    background: none;
+}
+
+.sidemenu{
+    height: 100vh;
+    width: 60%;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: -100%;
+    background: white;
+    padding: 100px;
+    overflow-y: scroll;
+}
+
+.sidemenu ul{
+    margin: 0 !important;
+    padding: 0;
+
+}
+.sidemenu li{
+    list-style: none;
+    text-decoration: none;
+    margin: 30px 0px;
+    overflow: hidden; 
+    padding: 0 .01em 0 0;
+
+}
+
+.sidemenu li a{
+    color: black;
+}
+
+.side-item-link{
+    position: relative;
+    display: inline-block;
+    transform-origin: bottom;
+    backface-visibility: hidden;
+    transform: translateY(0);
+    transition: 0.4s;
+    z-index: inherit;
+}
+
+
+.side-item-link::after{
+    content:attr(data-after) "";
+    position: absolute !important;
+    top:-100%;
+    left: 0%;
+    color: black;
+    transform: translateY(0);
+    transition: 0.4s;
+}
+
+.side-item-link:hover {
+    transform-origin: top left;
+    animation: skewAnim 0.4s  0.1s  linear  both;  
+}
+
+
+ .follow-grow{
+     transform:scale(15);
+     background-color: black;
+     z-index: 300 !important;
+ }
+
+ .hovered-link{
+     color: white;
+ }
+
+
+ a:hover{
+     text-decoration: none;
+ }
+
+@keyframes skewAnim{
+    0%{
+        transform: translateY(0%) skewY(0deg);
+    }
+    25%{
+        transform: translateY(25%) skewY(3deg);
+    }
+    50%{
+        transform: translateY(50%) skewY(6deg);
+    }
+    75%{
+        transform: translateY(75%) skewY(3deg);
+    }
+    100%{
+        transform: translateY(100%) skewY(0deg);
+    }
+}
+
+
+.mybtn{
+    border: none;
+    background-color: white;
+    border-bottom: solid 1px;
+    text-align: left !important;
+    padding: 10px 0px;
+    padding-left:20px;
+    padding-right:30px;
+    margin-top:15px;
+    color: black;
+    border-radius: none;
+    cursor: none !important;
+    transition: 0.4s;
+}
+
+.mybtn:hover{
+    background:black;
+    color: white;
+}
+
+
+/*Indicator Animation*/
+.mouse{
+    margin: 50px auto;
+    width: 100px;
+  }
+  
+  .mouse-icon{
+     width: 15px;
+     height: 25px;
+     border: 2px solid black;
+     border-radius: 15px;
+     cursor: pointer;
+     text-align: center;
+  }
+  .mouse-wheel{
+    height: 4px;
+    width: 4px;
+    margin: 0 auto;
+    display: block;
+    background-color: black;
+    border-radius: 50%;
+    -webkit-animation: 1s ease infinite wheel-up-down;
+   -moz-animation: 1s ease infinite wheel-up-down;
+    animation: 1s ease infinite wheel-up-down;
+  }
+
+  @-webkit-keyframes wheel-up-down {
+      0% {
+          margin-top: 2px;
+          opacity: 0;
+      }
+      20% {
+          opacity: 1;
+      }
+      100% {
+          margin-top: 20px;
+          opacity: 0;
+      }
+  }@-moz-keyframes wheel-up-down {
+      0% {
+          margin-top: 2px;
+          opacity: 1;
+      }
+      100% {
+          margin-top: 20px;
+          opacity: 0;
+      }
+  }
+  @keyframes wheel-up-down {
+      0% {
+          margin-top: 2px;
+          opacity: 1;
+      }
+      100% {
+          margin-top: 20px;
+          opacity: 0;
+      }
+  }
+
+.hero{
+    height: 100vh;
+    padding: 50px 100px;
+}
+
+
+.all{
+    position: relative;
+    background-color: white;
+    padding: 50px 100px;
+}
+
+.scroll-indicator{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+}
+
+.hero-text{
+    color: black;
+}
+
+.headline{
+    color: black;
+}
+
+.headline a{
+    font-weight: 300;
+}
+
+.project{
+    margin-top: 100px;
+}
+
+.project:last-child {
+    margin-bottom: 100px;
+  }
+.projects{
+    background-color: white;
+}
+
+.project-image{
+    margin: 0 auto;
+    height: 500px;
+    width: 80%;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.project-text{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+
+.mini-project{
+    margin: 100px 0px;
+}
+
+.mini-project-image{
+    height: 300px;
+    width: 90%;
+    background:url('/Mocked1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.about{
+    background: white;
+}
+
+
+.text-box{
+    margin-top: 90px;
+}
+
+.footer{
+    background-color: black;
+    padding: 100px !important;
+    position: relative;
+}
+
+.contact .email{
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 0px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.contact .email:hover{
+    background-color: white;
+    color: black;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.links a{
+    color: white;
+    font-size: 20px;
+    padding: 10px 0px;
+    text-decoration: none;
+    transition: 0.4s;
+    display: block;
+}
+
+
+.links a:hover{
+    background-color: white;
+    color: black;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
+.margin{
+    margin: 0px 70px;
+}
+
+a{
+    cursor: none !important;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .hero-text h1{
+        color: black;
+        font-size: 35px !important;
+    }
+
+    .headline{
+        color: black;
+        font-size: 35px !important;
+    }
+
+    .project-text h2{
+        font-size:  1.25rem;
+    }
+.all{
+    padding: 20px 50px;
+}
+
+.hero{
+    height: 100vh;
+    padding: 50px;
+}
+
+.scroll-indicator{
+    position: absolute;
+    bottom: 10%;
+    left: 100%;
+    transform: translate(-50%,-10%);
+}
+
+
+.footer{
+
+    padding: 50px !important;
+}
+
+.cursor{
+            display: none;
+ }
+
+
+.project-image{
+        width: 100%;
+      }
+
+  .top-icon{
+
+    display: none;
+     }
+
+
+     
+    .sidemenu{
+        width: 100%;
+    }
+
+    .social-ul{
+        display: none;
+    }
+
+    .menu-ul h1{
+        font-size:  2.25rem;
+    }
+
+    .sidemenu{
+        padding:50px;
+    }
+ }
+
+
+ .haltscroll{
+    position: fixed;
+ }
+
+
+
+ .follow-view{
+     opacity: 1;
+     background-color: white;
+     color: black;
+     height: 70px;
+     width: 70px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 100%;
+     transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+ }
+
+ #darklight{
+     border: none;
+     background: none;
+     margin-right: 20px;
+     font-size: 20px;
+     cursor: none;
+     padding: 0px 10px;
+     transition: 0.4s transform;
+ }
+ #darklight:focus{
+     outline: none; 
+    }
+
+     #darklight:hover{
+         transform:rotate(360deg);
+     }
